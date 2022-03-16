@@ -6,13 +6,14 @@ package hashmap
 
 import (
 	"encoding/json"
+	"github.com/qauzy/gods/containers"
 	"github.com/qauzy/gods/utils"
 )
 
-//func assertSerializationImplementation() {
-//	var _ containers.JSONSerializer = (*Map)(nil)
-//	var _ containers.JSONDeserializer = (*Map)(nil)
-//}
+func assertSerializationImplementation() {
+	var _ containers.JSONSerializer = (*Map[int, string])(nil)
+	var _ containers.JSONDeserializer = (*Map[int, string])(nil)
+}
 
 // ToJSON outputs the JSON representation of the map.
 func (m *Map[K, V]) ToJSON() ([]byte, error) {

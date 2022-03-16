@@ -11,12 +11,13 @@ package hashset
 
 import (
 	"fmt"
+	"github.com/qauzy/gods/sets"
 	"strings"
 )
 
-//func assertSetImplementation() {
-//	var _ sets.Set = (*Set)(nil)
-//}
+func assertSetImplementation() {
+	var _ sets.Set[int] = (*Set[int])(nil)
+}
 
 // Set holds elements in go's native map
 type Set[T comparable] struct {
