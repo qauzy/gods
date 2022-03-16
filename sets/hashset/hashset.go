@@ -27,8 +27,8 @@ type Set[T comparable] struct {
 var itemExists = struct{}{}
 
 // New instantiates a new empty set and adds the passed values, if any, to the set
-func New[T comparable](values ...T) *Set[T] {
-	set := &Set[T]{items: make(map[T]struct{})}
+func New[TP comparable](values ...TP) *Set[TP] {
+	set := &Set[TP]{items: make(map[TP]struct{})}
 	if len(values) > 0 {
 		set.Add(values...)
 	}
