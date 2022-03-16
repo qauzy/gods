@@ -12,7 +12,7 @@ import (
 
 // ArrayListExample to demonstrate basic usage of ArrayList
 func main() {
-	list := arraylist.New("d")
+	list := arraylist.New[string]()
 	list.Add("a")                     // ["a"]
 	list.Add("c", "b")                // ["a","c","b"]
 	list.Sort(utils.StringComparator) // ["a","b","c"]

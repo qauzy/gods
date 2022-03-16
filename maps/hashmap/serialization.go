@@ -6,17 +6,16 @@ package hashmap
 
 import (
 	"encoding/json"
-	"github.com/qauzy/gods/containers"
 	"github.com/qauzy/gods/utils"
 )
 
-func assertSerializationImplementation() {
-	var _ containers.JSONSerializer = (*Map)(nil)
-	var _ containers.JSONDeserializer = (*Map)(nil)
-}
+//func assertSerializationImplementation() {
+//	var _ containers.JSONSerializer = (*Map)(nil)
+//	var _ containers.JSONDeserializer = (*Map)(nil)
+//}
 
 // ToJSON outputs the JSON representation of the map.
-func (m *Map) ToJSON() ([]byte, error) {
+func (m *Map[K, V]) ToJSON() ([]byte, error) {
 	elements := make(map[string]interface{})
 	for key, value := range m.m {
 		elements[utils.ToString(key)] = value
@@ -25,8 +24,8 @@ func (m *Map) ToJSON() ([]byte, error) {
 }
 
 // FromJSON populates the map from the input JSON representation.
-func (m *Map) FromJSON(data []byte) error {
-	elements := make(map[string]interface{})
+func (m *Map[K, V]) FromJSON(data []byte) error {
+	elements := make(map[K]V)
 	err := json.Unmarshal(data, &elements)
 	if err == nil {
 		m.Clear()
