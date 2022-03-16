@@ -5,8 +5,8 @@
 package treeset
 
 import (
-	"github.com/emirpasic/gods/containers"
-	rbt "github.com/emirpasic/gods/trees/redblacktree"
+	"github.com/qauzy/gods/containers"
+	rbt "github.com/qauzy/gods/trees/redblacktree"
 )
 
 func assertIteratorImplementation() {

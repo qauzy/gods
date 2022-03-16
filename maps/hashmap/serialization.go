@@ -6,8 +6,8 @@ package hashmap
 
 import (
 	"encoding/json"
-	"github.com/emirpasic/gods/containers"
-	"github.com/emirpasic/gods/utils"
+	"github.com/qauzy/gods/containers"
+	"github.com/qauzy/gods/utils"
 )
 
 func assertSerializationImplementation() {
